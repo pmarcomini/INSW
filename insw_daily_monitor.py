@@ -23,7 +23,7 @@ import xml.etree.ElementTree as ET
 SMTP_SERVER = "smtp.hostinger.com"
 SMTP_PORT = 465
 SENDER_EMAIL = "info@bajocontrol.com"
-SENDER_PASSWORD = "1nf0rm4c10n"  # Contraseña de aplicación de Google
+SENDER_PASSWORD = ""  # Contraseña de aplicación de Google
 RECIPIENT_EMAIL = "info@bajocontrol.com"
 
 def get_stock_data():
