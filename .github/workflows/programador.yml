@@ -1,0 +1,35 @@
+name: Ejecutar Script Diario
+
+# 1. Configura el horario
+on:
+  schedule:
+    # El horario usa formato Cron (en hora UTC). 
+    # '0 8 * * *' significa todos los días a las 8:00 AM UTC.
+    - cron: '0 8 * * *'
+  
+  # Esto te permite ejecutar el script manualmente cuando quieras con un botón
+  workflow_dispatch: 
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 2. Descarga el código de tu repositorio en la máquina virtual
+    - name: Descargar codigo
+      uses: actions/checkout@v4
+
+    # 3. Instala Python en la máquina virtual
+    - name: Configurar Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    # 4. Instala las librerías (Borra estas dos líneas si tu script no usa librerías externas)
+    - name: Instalar librerías externas
+      run: |
+        pip install -r requirements.txt
+
+    # 5. Ejecuta tu script
+    - name: Ejecutar script de Python
+      run: python script.py
