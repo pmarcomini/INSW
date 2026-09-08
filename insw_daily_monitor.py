@@ -20,11 +20,11 @@ import xml.etree.ElementTree as ET
 # ==========================================
 # CONFIGURACIÓN DE NOTIFICACIONES (EMAIL)
 # ==========================================
-SMTP_SERVER = "smtp.hostinger.com"
+SMTP_SERVER = ""
 SMTP_PORT = 465
-SENDER_EMAIL = "info@bajocontrol.com"
+SENDER_EMAIL = ""
 SENDER_PASSWORD = ""  # Contraseña de aplicación de Google
-RECIPIENT_EMAIL = "info@bajocontrol.com"
+RECIPIENT_EMAIL = ""
 
 def get_stock_data():
     """Obtiene datos de cotización de INSW usando endpoints públicos de Yahoo Finance."""
